@@ -1,0 +1,15 @@
+export interface ISelect<%- PascalTableName %>AllParam {
+    limit?: number,
+    offset?: number,
+    connection: Connection | PoolConnection,
+}
+export function select<%- PascalTableName %>All(param: ISelect<%- PascalTableName %>AllParam) {
+    const { limit, offset, connection } = param;
+
+    return querySelectAll<I<%- PascalTableName %>Entity>({
+        table: TABLE_NAME,
+        limit,
+        offset,
+        connection,
+    });
+}

@@ -1,0 +1,52 @@
+{
+  "name": "@ag1/gen_mysql_entities_cli",
+  "version": "0.1.0",
+  "description": "generate most used mysql entity functions in our codebase",
+  "main": "index.js",
+  "author": "agent one co., ltd.",
+  "license": "MIT",
+  "private": false,
+  "bin": {
+    "gen-mysql-entities": "index.js"
+  },
+  "scripts": {
+    "start": "node index.js",
+    "compile": "tsc",
+    "lint": "tslint -p tsconfig.json -t stylish",
+    "prettier": "yarn prettier-config && yarn prettier-ts",
+    "prettier-config": "prettier --no-config --write './*.{json,yml}'",
+    "prettier-ts": "prettier --write './**/*.ts'"
+  },
+  "dependencies": {
+    "@ag1/mysql_rx_wrapper": "^0.6.1",
+    "@ag1/nil": "^0.1.2",
+    "change-case": "^3.0.2",
+    "ejs": "^2.6.1",
+    "mkdirp": "^0.5.1",
+    "mysql": "^2.16.0",
+    "rxjs": "^6.3.1",
+    "yargs": "^12.0.1"
+  },
+  "devDependencies": {
+    "@types/change-case": "^2.3.1",
+    "@types/ejs": "^2.6.0",
+    "@types/mkdirp": "^0.5.2",
+    "@types/mysql": "^2.15.5",
+    "@types/yargs": "^11.1.1",
+    "prettier": "^1.14.2",
+    "tslint": "^5.11.0",
+    "tslint-microsoft-contrib": "^5.2.1",
+    "typescript": "^3.0.3"
+  },
+  "keywords": [
+    "generate",
+    "mysql",
+    "entity",
+    "mysql_rx_wrapper"
+  ],
+  "repository": {
+    "url": "https://github.com/AgentOneCoLtd/gen_mysql_entities_cli.git",
+    "type": "git"
+  },
+  "readmeFilename": "readme.md"
+}

@@ -1,0 +1,5 @@
+export interface I<%- PascalTableName %>Entity {
+    <%_ columns.forEach((c) => { _%>
+    <%- c.columnName %>: <%- c.tsType %>, // <%- c.columnType %>
+    <%_ }); _%>
+}

@@ -1,0 +1,22 @@
+export interface ISelect<%- PascalTableName %>OnMatchParam {
+    matchProps: I<%- PascalTableName %>EntitySelectOnMatchMatchProps,
+    limit?: number,
+    offset?: number,
+    connection: Connection | PoolConnection,
+}
+export function select<%- PascalTableName %>OnMatch(param: ISelect<%- PascalTableName %>OnMatchParam) {
+    const { matchProps, limit, offset, connection } = param;
+
+    const { error: matchPropsError } = Joi.validate(matchProps, joiSelectOnMatchSchema);
+    if (matchPropsError instanceof Error) {
+        throw matchPropsError;
+    }
+
+    return querySelectOnMatch<I<%- PascalTableName %>EntitySelectOnMatchMatchProps, I<%- PascalTableName %>Entity>({
+        table: TABLE_NAME,
+        matchProps,
+        limit,
+        offset,
+        connection,
+    });
+}

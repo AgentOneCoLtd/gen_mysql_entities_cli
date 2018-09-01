@@ -1,0 +1,5 @@
+export interface I<%- PascalTableName %>EntitySelectOnMatchMatchProps {
+    <%_ columns.forEach((c) => { _%>
+    <%- c.columnName %>?: <%- c.tsType %>, // <%- c.columnType %><% if (c.isOptional) { %>, optional<% } %>
+    <%_ }); _%>
+}

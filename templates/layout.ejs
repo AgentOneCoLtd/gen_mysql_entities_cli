@@ -1,0 +1,43 @@
+import { queryInsert, querySelectAll, querySelectOnMatch, queryUpdateOnMatch } from '@ag1/mysql_rx_wrapper';
+import Joi = require('joi');
+import { Connection, PoolConnection } from 'mysql';
+
+export const TABLE_NAME = '<%- tableName %>';
+
+<%- include('entity') -%>
+
+//////////////////////
+// INSERT
+//////////////////////
+
+<%- include('./entity_for_insert.ejs') -%>
+
+<%- include('./joi_insert_schema.ejs') -%>
+
+<%- include('./insert_function.ejs') -%>
+
+//////////////////////
+// UPDATE ON MATCH
+//////////////////////
+
+<%- include('./entity_for_update_on_match.ejs') -%>
+
+<%- include('./joi_update_on_match_schema.ejs') -%>
+
+<%- include('./update_on_match_function.ejs') -%>
+
+//////////////////////
+// SELECT ALL
+//////////////////////
+
+<%- include('./select_all_function.ejs') -%>
+
+//////////////////////
+// SELECT ON MATCH
+//////////////////////
+
+<%- include('./entity_for_select_on_match.ejs') -%>
+
+<%- include('./joi_select_on_match_schema.ejs') -%>
+
+<%- include('./select_on_match_function.ejs') -%>

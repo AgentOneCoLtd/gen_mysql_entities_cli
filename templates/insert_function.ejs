@@ -1,0 +1,18 @@
+export interface IInsert<%- PascalTableName %>Param {
+    values: I<%- PascalTableName %>EntityInsertValues,
+    connection: Connection | PoolConnection,
+}
+export function insert<%- PascalTableName %>(param: IInsert<%- PascalTableName %>Param) {
+    const { values, connection } = param;
+
+    const { error } = Joi.validate(values, joiInsertSchema);
+    if (error instanceof Error) {
+        throw error;
+    }
+
+    return queryInsert<I<%- PascalTableName %>EntityInsertValues>({
+        table: TABLE_NAME,
+        values,
+        connection,
+    });
+}

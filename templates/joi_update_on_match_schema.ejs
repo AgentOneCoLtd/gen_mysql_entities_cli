@@ -1,0 +1,13 @@
+export const joiUpdateOnMatchSchema = Joi.object().keys({
+    <%_ columns.forEach((c) => { _%>
+    <%_ if (c.tsType.indexOf('number') !== -1) { _%>
+    <%- c.columnName %>: Joi.number(),
+    <%_ } else if (c.tsType.indexOf('Date') !== -1) { _%>
+    <%- c.columnName %>: Joi.date(),
+    <%_ } else if (c.tsType.indexOf('Buffer') !== -1) { _%>
+    <%- c.columnName %>: Joi.binary(),
+    <%_ } else { _%>
+    <%- c.columnName %>: Joi.string().allow('').max(<%- c.maxLength %>),
+    <%_ } _%>
+    <%_ }); _%>
+}).required();

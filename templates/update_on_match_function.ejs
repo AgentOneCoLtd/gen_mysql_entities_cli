@@ -1,0 +1,27 @@
+export interface IUpdate<%- PascalTableName %>OnMatchParam {
+    matchProps: I<%- PascalTableName %>EntityUpdateOnMatchMatchPropsValues,
+    values: I<%- PascalTableName %>EntityUpdateOnMatchMatchPropsValues,
+    limit?: number,
+    connection: Connection | PoolConnection,
+}
+export function update<%- PascalTableName %>OnMatch(param: IUpdate<%- PascalTableName %>OnMatchParam) {
+    const { matchProps, values, limit, connection } = param;
+
+    const { error: matchPropsError } = Joi.validate(matchProps, joiUpdateOnMatchSchema);
+    if (matchPropsError instanceof Error) {
+        throw matchPropsError;
+    }
+
+    const { error: valuesError } = Joi.validate(values, joiUpdateOnMatchSchema);
+    if (valuesError instanceof Error) {
+        throw valuesError;
+    }
+
+    return queryUpdateOnMatch<I<%- PascalTableName %>EntityUpdateOnMatchMatchPropsValues>({
+        table: TABLE_NAME,
+        matchProps,
+        values,
+        limit,
+        connection,
+    });
+}

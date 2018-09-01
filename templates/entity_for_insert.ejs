@@ -1,0 +1,9 @@
+export interface I<%- PascalTableName %>EntityInsertValues {
+    <%_ columns.forEach((c) => { _%>
+    <%_ if (c.isOptional) { _%>
+    <%- c.columnName %>?: <%- c.tsType %>, // <%- c.columnType %>, optional
+    <%_ } else { _%>
+    <%- c.columnName %>: <%- c.tsType %>, // <%- c.columnType %>
+    <%_ } _%>
+    <%_ }); _%>
+}
