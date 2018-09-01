@@ -10,7 +10,11 @@ function normalizeRawColumn(r) {
         tsType: get_ts_type_1.getTsType(r.DATA_TYPE, r.column_type, r.IS_NULLABLE),
         maxLength: r.CHARACTER_MAXIMUM_LENGTH,
         columnType: r.column_type,
-        isOptional: is_optional_1.isOptional(r.IS_NULLABLE, r.COLUMN_DEFAULT),
+        isOptional: is_optional_1.isOptional({
+            isNullable: r.IS_NULLABLE,
+            columnDefault: r.COLUMN_DEFAULT,
+            isIdentity: r.IsIdentity,
+        }),
         isNullable: r.IS_NULLABLE === 'YES',
     };
 }
