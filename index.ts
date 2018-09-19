@@ -27,7 +27,7 @@ getRenderedFile(connection).subscribe({
     },
     error(error) {
         connection.end();
-        console.error(error);
+        console.error(error); // tslint:disable-line
         process.exit(1);
     },
     complete() {

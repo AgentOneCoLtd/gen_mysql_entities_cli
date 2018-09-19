@@ -1,6 +1,6 @@
 {
   "name": "@ag1/gen_mysql_entities_cli",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "generate most used mysql entity functions in our codebase",
   "main": "index.js",
   "author": "agent one co., ltd.",
@@ -14,25 +14,25 @@
     "compile": "tsc",
     "lint": "tslint -p tsconfig.json -t stylish",
     "prettier": "yarn prettier-config && yarn prettier-ts",
-    "prettier-config": "prettier --no-config --write './*.{json,yml}'",
-    "prettier-ts": "prettier --write './**/*.ts'"
+    "prettier-config": "prettier --no-config --write \"./*.{json,yml}\"",
+    "prettier-ts": "prettier --write \"./**/*.ts\""
   },
   "dependencies": {
-    "@ag1/mysql_rx_wrapper": "^0.6.1",
-    "@ag1/nil": "^0.1.2",
+    "@ag1/mysql_rx_wrapper": "^0.6.2",
+    "@ag1/nil": "^0.1.3",
     "change-case": "^3.0.2",
     "ejs": "^2.6.1",
     "mkdirp": "^0.5.1",
     "mysql": "^2.16.0",
-    "rxjs": "^6.3.1",
-    "yargs": "^12.0.1"
+    "rxjs": "^6.3.2",
+    "yargs": "^12.0.2"
   },
   "devDependencies": {
     "@types/change-case": "^2.3.1",
     "@types/ejs": "^2.6.0",
     "@types/mkdirp": "^0.5.2",
     "@types/mysql": "^2.15.5",
-    "@types/yargs": "^11.1.1",
+    "@types/yargs": "^12.0.0",
     "prettier": "^1.14.2",
     "tslint": "^5.11.0",
     "tslint-microsoft-contrib": "^5.2.1",
