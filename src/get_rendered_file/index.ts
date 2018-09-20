@@ -1,6 +1,6 @@
 import { connect } from '@ag1/mysql_rx_wrapper';
 import { Connection } from 'mysql';
-import * as path from 'path';
+import path from 'path';
 import { from } from 'rxjs';
 import { mergeMap } from 'rxjs/operators';
 import { createEjsData } from '../create_ejs_data';

@@ -1,10 +1,13 @@
 #!/usr/bin/env node
 "use strict";
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
 Object.defineProperty(exports, "__esModule", { value: true });
 const fs_1 = require("fs");
-const mkdirp = require("mkdirp");
+const mkdirp_1 = __importDefault(require("mkdirp"));
 const mysql_1 = require("mysql");
-const path = require("path");
+const path_1 = __importDefault(require("path"));
 const get_info_from_cli_1 = require("./src/get_info_from_cli");
 const get_rendered_file_1 = require("./src/get_rendered_file");
 const answer = get_info_from_cli_1.getInfoFromCli();
@@ -16,8 +19,8 @@ const connection = mysql_1.createConnection({
     password: password,
     database: database,
 });
-const outputDir = path.resolve(process.cwd(), rawOutputDir);
-mkdirp.sync(outputDir);
+const outputDir = path_1.default.resolve(process.cwd(), rawOutputDir);
+mkdirp_1.default.sync(outputDir);
 get_rendered_file_1.getRenderedFile(connection).subscribe({
     next([htmlStr, templateData]) {
         fs_1.writeFileSync(`${outputDir}/${templateData.tableName}.ts`, htmlStr);

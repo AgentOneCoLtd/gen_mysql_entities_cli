@@ -1,6 +1,9 @@
 "use strict";
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
 Object.defineProperty(exports, "__esModule", { value: true });
-const yargs = require("yargs");
+const yargs_1 = __importDefault(require("yargs"));
 const usageStr = 'Usage: $ gen-mysql-entities -o <outputDir> -h <host> -p <port> -u <user> -x <password> -d <database>';
 const option = {
     o: {
@@ -35,6 +38,6 @@ const option = {
     },
 };
 function getInfoFromCli() {
-    return yargs.usage(usageStr).option(option).argv;
+    return yargs_1.default.usage(usageStr).option(option).argv;
 }
 exports.getInfoFromCli = getInfoFromCli;
