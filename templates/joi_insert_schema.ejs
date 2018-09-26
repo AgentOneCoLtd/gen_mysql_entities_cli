@@ -1,13 +1,13 @@
 export const joiInsertSchema = Joi.object().keys({
     <%_ columns.forEach((c) => { _%>
     <%_ if (c.tsType.indexOf('number') !== -1) { _%>
-    <%- c.columnName %>: Joi.number()<% if (!c.isOptional) {%>.required()<% } %>,
+    <%- c.columnName %>: Joi.number()<% if (c.isNullable) {%>.allow(null)<% } %><% if (!c.isOptional) {%>.required()<% } %>,
     <%_ } else if (c.tsType.indexOf('Date') !== -1) { _%>
-    <%- c.columnName %>: Joi.date()<% if (!c.isOptional) { %>.required()<% } %>,
+    <%- c.columnName %>: Joi.date()<% if (c.isNullable) {%>.allow(null)<% } %><% if (!c.isOptional) { %>.required()<% } %>,
     <%_ } else if (c.tsType.indexOf('Buffer') !== -1) { _%>
-    <%- c.columnName %>: Joi.binary()<% if (!c.isOptional) { %>.required()<% } %>,
+    <%- c.columnName %>: Joi.binary()<% if (c.isNullable) {%>.allow(null)<% } %><% if (!c.isOptional) { %>.required()<% } %>,
     <%_ } else { _%>
-    <%- c.columnName %>: Joi.string().allow('').max(<%- c.maxLength %>)<% if (!c.isOptional) {%>.required()<% } %>,
+    <%- c.columnName %>: Joi.string().allow('')<% if (c.isNullable) {%>.allow(null)<% } %>.max(<%- c.maxLength %>)<% if (!c.isOptional) {%>.required()<% } %>,
     <%_ } _%>
     <%_ }); _%>
 }).required();
