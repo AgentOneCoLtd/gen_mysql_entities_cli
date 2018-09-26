@@ -4,8 +4,14 @@ import { Observable, Observer } from 'rxjs';
 
 function observerRenderFile(path: string, data: Data, observer: Observer<[string, Data]>) {
     renderFile(path, data, (error, htmlStr) => {
-        if (!isNil(error) || isNil(htmlStr)) {
-            observer.error(error || new Error('NO_OUTPUT'));
+        if (!isNil(error)) {
+            observer.error(error);
+
+            return;
+        }
+
+        if (isNil(htmlStr)) {
+            observer.error(new Error('NO_OUTPUT'));
 
             return;
         }
@@ -16,7 +22,9 @@ function observerRenderFile(path: string, data: Data, observer: Observer<[string
 }
 
 export function rxEjsRenderFile(path: string, data: Data) {
-    return Observable.create((observer: Observer<[string, Data]>) => {
+    type tupleStrData = [string, Data];
+
+    return <Observable<tupleStrData>>Observable.create((observer: Observer<tupleStrData>) => {
         observerRenderFile(path, data, observer);
-    }) as Observable<[string, Data]>;
+    });
 }

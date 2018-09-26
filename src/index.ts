@@ -4,8 +4,8 @@ import { writeFileSync } from 'fs';
 import mkdirp from 'mkdirp';
 import { Connection, createConnection } from 'mysql';
 import path from 'path';
-import { getInfoFromCli } from './src/get_info_from_cli';
-import { getRenderedFile } from './src/get_rendered_file';
+import { getInfoFromCli } from './get_info_from_cli';
+import { getRenderedFile } from './get_rendered_file';
 
 const answer = getInfoFromCli();
 const { outputDir: rawOutputDir, host, port: portStr, user, password, database } = answer;
@@ -27,7 +27,10 @@ getRenderedFile(connection).subscribe({
     },
     error(error) {
         connection.end();
-        console.error(error); // tslint:disable-line
+
+        // tslint:disable-next-line no-console
+        console.error(error);
+
         process.exit(1);
     },
     complete() {

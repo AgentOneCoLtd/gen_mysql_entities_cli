@@ -8,3 +8,4 @@ export interface IInformationArg extends yargs.Arguments {
     database: string;
 }
 export declare function getInfoFromCli(): IInformationArg;
+//# sourceMappingURL=index.d.ts.map

@@ -13,4 +13,5 @@ export interface IGetAllColumnsResult {
     column_type: string;
     column_key: string;
 }
-export declare function getAllColumns(tableName: string, connection: Connection): import("rxjs/internal/Observable").Observable<[IGetAllColumnsResult[], import("mysql").FieldInfo[] | undefined]>;
+export declare function getAllColumns(tableName: string, connection: Connection): import("rxjs").Observable<[IGetAllColumnsResult[], import("mysql").FieldInfo[] | undefined]>;
+//# sourceMappingURL=index.d.ts.map

@@ -7,7 +7,7 @@ export declare function normalizeRawColumn(r: IGetAllColumnsResult): {
     isOptional: boolean;
     isNullable: boolean;
 };
-export declare function createEjsData(rawColumns: IGetAllColumnsResult[]): import("rxjs/internal/Observable").Observable<{
+export declare function createEjsData(rawColumns: IGetAllColumnsResult[]): import("rxjs").Observable<{
     tableName: string;
     PascalTableName: string;
     columns: {
@@ -19,3 +19,4 @@ export declare function createEjsData(rawColumns: IGetAllColumnsResult[]): impor
         isNullable: boolean;
     }[];
 }>;
+//# sourceMappingURL=index.d.ts.map
