@@ -2,6 +2,7 @@ import { isNil } from '@ag1/nil';
 
 export interface IIsOptionalParam {
     isNullable: string;
+    // tslint:disable-next-line no-any
     columnDefault: any;
     isIdentity: 0 | 1;
 }
