@@ -4,7 +4,6 @@ import { writeFileSync } from 'fs';
 import mkdirp from 'mkdirp';
 import { Connection, createConnection } from 'mysql';
 import path from 'path';
-import { formatTsCode } from './format_ts_code';
 import { getInfoFromCli } from './get_info_from_cli';
 import { getRenderedFile } from './get_rendered_file';
 
@@ -24,7 +23,7 @@ mkdirp.sync(outputDir);
 
 getRenderedFile(connection).subscribe({
     next([htmlStr, templateData]) {
-        writeFileSync(`${outputDir}/${templateData.tableName}.ts`, formatTsCode(htmlStr));
+        writeFileSync(`${outputDir}/${templateData.tableName}.ts`, htmlStr);
     },
     error(error) {
         connection.end();
