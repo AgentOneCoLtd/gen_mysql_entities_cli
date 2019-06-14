@@ -44,6 +44,6 @@ export interface IInformationArg extends yargs.Arguments {
     database: string;
 }
 
-export function getInfoFromCli() {
-    return <IInformationArg>yargs.usage(usageStr).option(option).argv;
+export function getInfoFromCli(): IInformationArg {
+    return yargs.usage(usageStr).option(option).argv as IInformationArg;
 }

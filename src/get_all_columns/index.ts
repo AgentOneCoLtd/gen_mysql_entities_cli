@@ -17,6 +17,7 @@ export interface IGetAllColumnsResult {
     TABLE_NAME: string;
     COLUMN_NAME: string;
     // tslint:disable-next-line no-any
+    /* eslint-disable-next-line @typescript-eslint/no-explicit-any */
     COLUMN_DEFAULT: any;
     IS_NULLABLE: 'NO' | 'YES';
     DATA_TYPE: string;

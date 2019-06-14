@@ -24,7 +24,7 @@ function observerRenderFile(path: string, data: Data, observer: Observer<[string
 export function rxEjsRenderFile(path: string, data: Data) {
     type tupleStrData = [string, Data];
 
-    return <Observable<tupleStrData>>Observable.create((observer: Observer<tupleStrData>) => {
+    return Observable.create((observer: Observer<tupleStrData>) => {
         observerRenderFile(path, data, observer);
-    });
+    }) as Observable<tupleStrData>;
 }

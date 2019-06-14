@@ -2,7 +2,7 @@ import { isNil } from '@ag1/nil';
 
 export interface IIsOptionalParam {
     isNullable: string;
-    // tslint:disable-next-line no-any
+    /* eslint-disable-next-line @typescript-eslint/no-explicit-any */
     columnDefault: any;
     isIdentity: 0 | 1;
 }
