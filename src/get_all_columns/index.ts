@@ -16,7 +16,6 @@ export function getSql(tableName: string) {
 export interface IGetAllColumnsResult {
     TABLE_NAME: string;
     COLUMN_NAME: string;
-    // tslint:disable-next-line no-any
     /* eslint-disable-next-line @typescript-eslint/no-explicit-any */
     COLUMN_DEFAULT: any;
     IS_NULLABLE: 'NO' | 'YES';
@@ -25,8 +24,10 @@ export interface IGetAllColumnsResult {
     NUMERIC_PRECISION: number | null;
     NUMERIC_SCALE: number | null;
     IsIdentity: 0 | 1;
-    column_type: string;
-    column_key: string;
+    column_type?: string; // mysql 5.6
+    COLUMN_TYPE?: string; // mysql 8.0
+    column_key?: string; // mysql 5.6
+    COLUMN_KEY?: string; // mysql 8.0
 }
 export function getAllColumns(tableName: string, connection: Connection) {
     const sql = getSql(tableName);
