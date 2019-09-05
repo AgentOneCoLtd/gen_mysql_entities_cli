@@ -1,3 +1,8 @@
+## v2.0.0
+
+* Use `@hapi/joi` instead of `joi`
+* Use `formatTsCode`
+
 ## v1.2.2
 
 * Use `make-dir` instead of `mkdirp`
