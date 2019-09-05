@@ -1,4 +1,6 @@
+import { QueryResult } from '@ag1/mysql_rx_wrapper';
 import { Connection } from 'mysql';
+import { Observable } from 'rxjs';
 export declare function getSql(tableName: string): string;
 export interface IGetAllColumnsResult {
     TABLE_NAME: string;
@@ -15,5 +17,5 @@ export interface IGetAllColumnsResult {
     column_key?: string;
     COLUMN_KEY?: string;
 }
-export declare function getAllColumns(tableName: string, connection: Connection): import("rxjs").Observable<[IGetAllColumnsResult[], import("mysql").FieldInfo[] | undefined]>;
+export declare function getAllColumns(tableName: string, connection: Connection): Observable<QueryResult<IGetAllColumnsResult[]>>;
 //# sourceMappingURL=index.d.ts.map

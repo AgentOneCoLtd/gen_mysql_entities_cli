@@ -1,3 +1,5 @@
 import { Connection } from 'mysql';
-export declare function getRenderedFile(connection: Connection): import("rxjs").Observable<[string, import("ejs").Data]>;
+import { Observable } from 'rxjs';
+import { Data } from 'ejs';
+export declare function getRenderedFile(connection: Connection): Observable<[string, Data]>;
 //# sourceMappingURL=index.d.ts.map
