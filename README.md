@@ -2,10 +2,6 @@
 
 generate most used mysql entity functions in our codebase
 
-# version
-
-1.1.0
-
 ## install
 
 ```bash
@@ -20,7 +16,7 @@ $ gen-mysql-entities -o <outputDir> -h <host> -p <port> -u <user> -x <password> 
 
 # dependencies
 ```bash
-yarn add @ag1/mysql_rx_wrapper @ag1/nil @ag1/return_switch change-case ejs make-dir mysql prettier rxjs yargs
+yarn add @ag1/mysql_rx_wrapper @ag1/nil @ag1/return_switch camelcase ejs make-dir mysql prettier rxjs yargs
 ```
 
 # devDependencies

@@ -1,6 +1,6 @@
 import { isNil } from '@ag1/nil';
 import { returnSwitch } from '@ag1/return_switch';
-import { pascalCase } from 'change-case';
+import * as camelcase from 'camelcase';
 import { of, Observable } from 'rxjs';
 import { IGetAllColumnsResult } from '../get_all_columns';
 import { getTsType } from '../get_ts_type';
@@ -50,7 +50,7 @@ export function createEjsData(rawColumns: IGetAllColumnsResult[]): Observable<IC
 
     return of({
         tableName,
-        PascalTableName: pascalCase(tableName),
+        PascalTableName: camelcase(tableName, { pascalCase: true }),
         columns,
     });
 }

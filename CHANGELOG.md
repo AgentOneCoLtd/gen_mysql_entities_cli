@@ -1,6 +1,7 @@
 ## v1.2.2
 
 * Use `make-dir` instead of `mkdirp`
+* Use `camelcase` instead of `change-case`
 
 ## v1.2.1
 
