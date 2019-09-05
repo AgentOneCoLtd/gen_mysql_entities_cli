@@ -1,3 +1,7 @@
+## v1.2.1
+
+* Merge github auto security fix pull request
+
 ## v1.2.0
 
 * Update build process
