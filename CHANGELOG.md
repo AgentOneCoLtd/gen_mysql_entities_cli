@@ -1,3 +1,7 @@
+## v1.2.3
+
+* Add parser
+
 ## v1.2.2
 
 * Use `make-dir` instead of `mkdirp`

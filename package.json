@@ -1,6 +1,6 @@
 {
   "name": "@ag1/gen_mysql_entities_cli",
-  "version": "1.2.2",
+  "version": "1.2.3",
   "description": "generate most used mysql entity functions in our codebase",
   "main": "./lib/index.js",
   "typings": "./lib/index.d.ts",
@@ -14,7 +14,7 @@
     "start": "node ./lib/index.js",
     "tsc:onlyts": "tsc -b tsconfig-onlyts.json",
     "compile": "yarn tsc:onlyts",
-    "lint": "eslint --ext .ts,.js . --fix",
+    "lint": "eslint --ext .ts,.js ./src --fix",
     "prettier:config": "prettier --no-config --write \"./*.{json,yml}\"",
     "prettier:ts": "prettier --write \"./src/**/*.ts\"",
     "prettier": "yarn prettier:config --loglevel warn && yarn prettier:ts --loglevel warn",
