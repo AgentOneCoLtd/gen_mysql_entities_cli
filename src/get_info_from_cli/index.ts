@@ -1,4 +1,4 @@
-import yargs from 'yargs';
+import * as yargs from 'yargs';
 
 const usageStr = 'Usage: $ gen-mysql-entities -o <outputDir> -h <host> -p <port> -u <user> -x <password> -d <database>';
 

@@ -1,7 +1,8 @@
-import { query } from '@ag1/mysql_rx_wrapper';
+import { query, QueryResult } from '@ag1/mysql_rx_wrapper';
 import { Connection, escape } from 'mysql';
+import { Observable } from 'rxjs';
 
-export function getSql(tableName: string) {
+export function getSql(tableName: string): string {
     return `
     SELECT TABLE_NAME,COLUMN_NAME,COLUMN_DEFAULT,IS_NULLABLE,
     DATA_TYPE,CHARACTER_MAXIMUM_LENGTH,NUMERIC_PRECISION,NUMERIC_SCALE,
@@ -29,7 +30,10 @@ export interface IGetAllColumnsResult {
     column_key?: string; // mysql 5.6
     COLUMN_KEY?: string; // mysql 8.0
 }
-export function getAllColumns(tableName: string, connection: Connection) {
+export function getAllColumns(
+    tableName: string,
+    connection: Connection,
+): Observable<QueryResult<IGetAllColumnsResult[]>> {
     const sql = getSql(tableName);
 
     return query<IGetAllColumnsResult[]>({ sql, connection });

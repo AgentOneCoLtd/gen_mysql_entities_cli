@@ -6,7 +6,7 @@ export interface IIsOptionalParam {
     columnDefault: any;
     isIdentity: 0 | 1;
 }
-export function isOptional(param: IIsOptionalParam) {
+export function isOptional(param: IIsOptionalParam): boolean {
     const { isNullable, columnDefault, isIdentity } = param;
 
     if (isNullable === 'YES' || isIdentity === 1) {

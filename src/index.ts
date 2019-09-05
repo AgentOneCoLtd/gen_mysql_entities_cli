@@ -1,9 +1,9 @@
 #!/usr/bin/env node
 
 import { writeFileSync } from 'fs';
-import mkdirp from 'mkdirp';
+import * as mkdirp from 'mkdirp';
 import { Connection, createConnection } from 'mysql';
-import path from 'path';
+import * as path from 'path';
 import { getInfoFromCli } from './get_info_from_cli';
 import { getRenderedFile } from './get_rendered_file';
 

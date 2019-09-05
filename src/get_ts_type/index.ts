@@ -1,13 +1,13 @@
-export function getEnumOrSetType(dataType: string, columnType: string) {
+export function getEnumOrSetType(dataType: string, columnType: string): string {
     return columnType
         .substring(dataType.length + 1, columnType.length - 1)
-        .replace(/\'/gi, "'")
-        .replace(/\,/gi, ' | ');
+        .replace(/\'/gi, "'") // eslint-disable-line no-useless-escape
+        .replace(/\,/gi, ' | '); // eslint-disable-line no-useless-escape
 }
 
 // NOTE: https://github.com/mysqljs/mysql#type-casting
 // UPDATED: 14-June-2019
-export function getMainType(dataType: string, columnType: string) {
+export function getMainType(dataType: string, columnType: string): string {
     switch (dataType) {
         case 'tinyint':
         case 'smallint':
@@ -39,7 +39,7 @@ export function getMainType(dataType: string, columnType: string) {
     }
 }
 
-export function getTsType(dataType: string, columnType: string, isNullable: string) {
+export function getTsType(dataType: string, columnType: string, isNullable: string): string {
     const mainType = getMainType(dataType, columnType);
 
     if (isNullable === 'YES') {
