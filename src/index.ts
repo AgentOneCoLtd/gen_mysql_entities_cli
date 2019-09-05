@@ -6,6 +6,7 @@ import { Connection, createConnection } from 'mysql';
 import * as path from 'path';
 import { getInfoFromCli } from './get_info_from_cli';
 import { getRenderedFile } from './get_rendered_file';
+import { formatTsCode } from './format_ts_code';
 
 const answer = getInfoFromCli();
 const { outputDir: rawOutputDir, host, port: portStr, user, password, database } = answer;
@@ -23,7 +24,7 @@ makedir.sync(outputDir);
 
 getRenderedFile(connection).subscribe({
     next([htmlStr, templateData]) {
-        writeFileSync(`${outputDir}/${templateData.tableName}.ts`, htmlStr);
+        writeFileSync(`${outputDir}/${templateData.tableName}.ts`, formatTsCode(htmlStr));
     },
     error(error) {
         connection.end();
