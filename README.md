@@ -20,10 +20,10 @@ $ gen-mysql-entities -o <outputDir> -h <host> -p <port> -u <user> -x <password> 
 
 # dependencies
 ```bash
-yarn add @ag1/mysql_rx_wrapper @ag1/nil @ag1/return_switch change-case ejs mkdirp mysql prettier rxjs yargs
+yarn add @ag1/mysql_rx_wrapper @ag1/nil @ag1/return_switch change-case ejs make-dir mysql prettier rxjs yargs
 ```
 
 # devDependencies
 ```bash
-yarn add @babel/core @babel/preset-env @babel/preset-typescript @types/ejs @types/jest @types/mkdirp @types/mysql @types/node@^10 @types/prettier @typescript-eslint/eslint-plugin @typescript-eslint/parser @types/yargs eslint eslint-config-prettier eslint-plugin-prettier jest ts-jest typescript --dev
+yarn add @babel/core @babel/preset-env @babel/preset-typescript @types/ejs @types/jest @types/mysql @types/node@^10 @types/prettier @typescript-eslint/eslint-plugin @typescript-eslint/parser @types/yargs eslint eslint-config-prettier eslint-plugin-prettier jest ts-jest typescript --dev
 ```

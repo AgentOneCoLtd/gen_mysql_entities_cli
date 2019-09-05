@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
 import { writeFileSync } from 'fs';
-import * as mkdirp from 'mkdirp';
+import * as makedir from 'make-dir';
 import { Connection, createConnection } from 'mysql';
 import * as path from 'path';
 import { getInfoFromCli } from './get_info_from_cli';
@@ -19,7 +19,7 @@ const connection: Connection = createConnection({
 });
 const outputDir = path.resolve(process.cwd(), rawOutputDir);
 
-mkdirp.sync(outputDir);
+makedir.sync(outputDir);
 
 getRenderedFile(connection).subscribe({
     next([htmlStr, templateData]) {

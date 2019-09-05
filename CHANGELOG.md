@@ -1,3 +1,7 @@
+## v1.2.2
+
+* Use `make-dir` instead of `mkdirp`
+
 ## v1.2.1
 
 * Merge github auto security fix pull request
