@@ -1,3 +1,8 @@
+## v1.2.0
+
+* Update build process
+* Upgrade libs version
+
 ## v1.1.0
 
 * Update project structure

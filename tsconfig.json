@@ -3,10 +3,8 @@
   "compilerOptions": {
     "module": "commonjs",
     "moduleResolution": "node",
-    "target": "ES2017",
+    "target": "es2017",
     "lib": ["es2017"],
-    "allowSyntheticDefaultImports": true,
-    "esModuleInterop": true,
     "strict": true
   },
   "include": ["./src/**/*.ts"]
