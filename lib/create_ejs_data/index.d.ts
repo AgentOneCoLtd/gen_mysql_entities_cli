@@ -1,5 +1,6 @@
 import { Observable } from 'rxjs';
 import { IGetAllColumnsResult } from '../get_all_columns';
+export declare function getMaxLength(dataType: string, characterMaximumLength: number | null): number | null;
 export interface INormalizeRawColumnResult {
     columnName: string;
     tsType: string;
