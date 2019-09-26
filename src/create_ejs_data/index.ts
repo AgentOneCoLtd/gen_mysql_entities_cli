@@ -6,6 +6,14 @@ import { IGetAllColumnsResult } from '../get_all_columns';
 import { getTsType } from '../get_ts_type';
 import { isOptional } from '../is_optional';
 
+export function getMaxLength(dataType: string, characterMaximumLength: number | null): number | null {
+    if (dataType === 'time') {
+        return 8;
+    }
+
+    return characterMaximumLength;
+}
+
 export interface INormalizeRawColumnResult {
     columnName: string;
     tsType: string;
@@ -28,7 +36,7 @@ export function normalizeRawColumn(r: IGetAllColumnsResult): INormalizeRawColumn
     return {
         columnName: r.COLUMN_NAME,
         tsType: getTsType(r.DATA_TYPE, columnType, r.IS_NULLABLE),
-        maxLength: r.CHARACTER_MAXIMUM_LENGTH,
+        maxLength: getMaxLength(r.DATA_TYPE, r.CHARACTER_MAXIMUM_LENGTH),
         columnType,
         isOptional: isOptional({
             isNullable: r.IS_NULLABLE,
