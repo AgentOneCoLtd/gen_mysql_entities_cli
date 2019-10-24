@@ -1,3 +1,7 @@
+## v3.0.0
+
+* Support `@hapi/joi@^16`
+
 ## v2.0.1
 
 * Fix bug missing character max length for data type `time`
