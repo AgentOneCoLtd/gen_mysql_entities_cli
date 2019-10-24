@@ -7,7 +7,7 @@ export interface ISelect<%- PascalTableName %>OnMatchParam {
 export function select<%- PascalTableName %>OnMatch(param: ISelect<%- PascalTableName %>OnMatchParam) {
     const { matchProps, limit, offset, connection } = param;
 
-    const { error: matchPropsError } = Joi.validate(matchProps, joiSelectOnMatchSchema);
+    const { error: matchPropsError } = joiSelectOnMatchSchema.validate(matchProps);
     if (matchPropsError instanceof Error) {
         throw matchPropsError;
     }

@@ -7,12 +7,12 @@ export interface IUpdate<%- PascalTableName %>OnMatchParam {
 export function update<%- PascalTableName %>OnMatch(param: IUpdate<%- PascalTableName %>OnMatchParam) {
     const { matchProps, values, limit, connection } = param;
 
-    const { error: matchPropsError } = Joi.validate(matchProps, joiUpdateOnMatchSchema);
+    const { error: matchPropsError } = joiUpdateOnMatchSchema.validate(matchProps);
     if (matchPropsError instanceof Error) {
         throw matchPropsError;
     }
 
-    const { error: valuesError } = Joi.validate(values, joiUpdateOnMatchSchema);
+    const { error: valuesError } = joiUpdateOnMatchSchema.validate(values);
     if (valuesError instanceof Error) {
         throw valuesError;
     }

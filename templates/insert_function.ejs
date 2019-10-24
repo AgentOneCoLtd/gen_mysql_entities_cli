@@ -5,7 +5,7 @@ export interface IInsert<%- PascalTableName %>Param {
 export function insert<%- PascalTableName %>(param: IInsert<%- PascalTableName %>Param) {
     const { values, connection } = param;
 
-    const { error } = Joi.validate(values, joiInsertSchema);
+    const { error } = joiInsertSchema.validate(values);
     if (error instanceof Error) {
         throw error;
     }
