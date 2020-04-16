@@ -21,5 +21,5 @@ yarn add @ag1/mysql_rx_wrapper @ag1/nil @ag1/return_switch camelcase ejs make-di
 
 # devDependencies
 ```bash
-yarn add @babel/core @babel/preset-env @babel/preset-typescript @types/ejs @types/jest @types/mysql @types/node@^10 @types/prettier @typescript-eslint/eslint-plugin @typescript-eslint/parser @types/yargs eslint eslint-config-prettier eslint-plugin-prettier jest ts-jest typescript --dev
+yarn add @babel/core @babel/preset-env @babel/preset-typescript @types/ejs @types/jest @types/mysql @types/node@^12 @types/prettier @types/yargs @typescript-eslint/eslint-plugin @typescript-eslint/parser eslint eslint-config-prettier eslint-plugin-prettier jest ts-jest typescript --dev
 ```
