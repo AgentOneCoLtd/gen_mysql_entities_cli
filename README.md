@@ -1,5 +1,7 @@
 # gen_mysql_entities_cli
 
+![Node.js CI](https://github.com/AgentOneCoLtd/gen_mysql_entities_cli/workflows/Node.js%20CI/badge.svg)
+
 generate most used mysql entity functions in our codebase
 
 ## install
